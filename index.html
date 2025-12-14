@@ -2,87 +2,81 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz Navidad 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FORZAR CACHÉ -->
-    <link rel="stylesheet" href="Estilos.css?v=5">
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="Estilos.css?v=4">
 </head>
 <body>
 
 <!-- 🌲 FONDO DE ÁRBOLES -->
 <div class="background-trees"></div>
 
-<!-- 🎄 LUCES PARPADEANTES -->
+<!-- 🎄 LUCES -->
 <div class="luces">
     <span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
 </div>
 
-<!-- 🎵 MÚSICA (se activa al primer clic) -->
-<audio id="musica" loop>
-    <source src="musica.mp3?v=1" type="audio/mpeg">
+<!-- 🎵 MÚSICA (AUTOMÁTICA Y OCULTA) -->
+<audio autoplay loop hidden>
+    <source src="musica.mp3?v=2" type="audio/mpeg">
 </audio>
 
 <!-- 🎄 NAVBAR -->
 <nav class="navbar">
-    <div class="nav-title">
-        🎄 <span>Navidad 2025</span> 🎄
-    </div>
+    <div class="nav-title">🎄 Navidad 2025 🎄</div>
     <ul class="nav-menu">
-        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#inicio">Musica</a></li>
     </ul>
 </nav>
 
-<!-- 🎁 TARJETA -->
-<div class="container">
-    <div class="header" id="inicio">
-        <h1><em>🎄 Feliz Navidad 🎄</em></h1>
-        <p><em>Que esta temporada esté llena de amor y esperanza</em></p>
+<!-- ⭐ TARJETA EN FORMA DE ESTRELLA -->
+<div class="container-star" id="inicio">
+
+    <div class="header-star">
+        ⭐ Feliz Navidad ⭐
+        <p>Que la magia ilumine tu corazón</p>
     </div>
 
-    <div class="content">
-        <div class="icon-section">✨</div>
+    <div class="content-star">
 
-        <h2>Un Mensaje para Compartir</h2>
+        <h2>Un Mensaje Especial para Ti</h2>
 
         <p>
-            La Navidad es una oportunidad para hacer una pausa, agradecer lo vivido
-            y renovar nuestras fuerzas para lo que viene. Que esta época te recuerde
-            que cada esfuerzo vale la pena y que siempre hay razones para seguir
-            soñando, aprendiendo y creciendo.
+            Que esta Navidad te regale momentos de calma, sonrisas sinceras
+            y la oportunidad de agradecer todo lo vivido.
+            Que cada luz encendida sea una esperanza renovada
+            y cada abrazo un recuerdo eterno.
         </p>
 
-        <div class="card">
-            <h3>Metas para estas Festividades:</h3>
-            <p>
-                🌟 Que el nuevo año llegue lleno de oportunidades<br><br>
-                🎄 Que nunca te falten motivos para sonreír<br><br>
-                🚀 Que cada meta que te propongas esté un paso más cerca<br><br>
-                ❤️ Que la paz y la tranquilidad acompañen tu camino
-            </p>
+        <div class="card-star">
+            <h3>Mis Deseos para estas Festividades que se cumplan Son:</h3>
+            <ul>
+                <li>🌟 Que encuentres paz en cada nuevo amanecer</li>
+                <li>🎄 Que la unión y el cariño rodeen tu hogar</li>
+                <li>🎁 Que los pequeños momentos se vuelvan grandes recuerdos</li>
+                <li>✨ Que el nuevo año llegue lleno de oportunidades</li>
+            </ul>
         </div>
 
-        <div class="emoji-line">🎅 🎁 ⭐ 🔔</div>
+        <div class="emoji-line">⭐ 🎄 🎁 ✨</div>
 
-        <p class="final-text">
-            <em>¡Feliz Navidad y Próspero Año Nuevo!</em>
-        </p>
+        <p class="final-text">¡Feliz Navidad y un Próspero Año Nuevo!</p>
+
     </div>
 
-    <div class="footer">
-        @ Jhofre Jesus Zambrano Robalino
+    <div class="footer-star">
+        © 2025 — Con cariño 🎄<br>
+        Jhofre Jesus Zambrano Robalino
     </div>
+
 </div>
 
-<script src="animacionnevada.js?v=5"></script>
-
-<script>
-    // Activar música al primer clic (obligatorio por navegador)
-    document.addEventListener("click", () => {
-        document.getElementById("musica").play();
-    }, { once: true });
-</script>
+<!-- EFECTOS -->
+<script src="animacionnevada.js?v=4"></script>
 
 </body>
 </html>
+
