@@ -1,16 +1,25 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Georgia', serif;
-    background: linear-gradient(to bottom, #0b3d2e, #145a32, #1e8449);
-    min-height: 100vh;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-/* 🌲 FONDO DE ÁRBOLES */
+/* FONDO GENERAL */
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #0b2d1b, #0f3d2e, #164d3a);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 🌲 ÁRBOLES */
 .background-trees {
     position: fixed;
     bottom: 0;
@@ -19,137 +28,128 @@ body {
     height: 260px;
     background: url("arboles.png") repeat-x bottom;
     background-size: contain;
-    opacity: 0.6;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
+    opacity: 0.95;
 }
 
 /* 🎄 NAVBAR */
 .navbar {
-    background: linear-gradient(135deg, #8b0000, #b22222, #228b22);
+    background: linear-gradient(135deg, #b11226, #0f6b3f);
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 5;
     position: relative;
-    z-index: 2;
 }
 
-.nav-title span {
-    color: white;
+.nav-title {
+    color: gold;
     font-size: 36px;
     font-weight: bold;
 }
 
 .nav-menu {
     list-style: none;
-    display: flex;
-    justify-content: center;
     margin-top: 15px;
 }
 
 .nav-menu a {
     color: white;
     text-decoration: none;
-    padding: 12px 30px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 25px;
-}
-
-/* 🎁 TARJETA */
-.container {
-    max-width: 700px;
-    margin: 50px auto;
-    background: white;
+    padding: 10px 25px;
+    background: rgba(255,255,255,0.25);
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    overflow: hidden;
+}
+
+/* ⭐ TARJETA ESTRELLA */
+.container-star {
+    width: 680px;
+    margin: 80px auto;
+    background: linear-gradient(135deg, #c31432, #240b36);
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    z-index: 5;
     position: relative;
-    z-index: 2;
-}
-
-.header {
-    background: linear-gradient(135deg, #b22222, #228b22);
-    padding: 50px;
-    text-align: center;
     color: white;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
 }
 
-.content {
-    padding: 40px;
-}
-
-.icon-section {
+/* CONTENIDO */
+.header-star {
     text-align: center;
-    font-size: 50px;
+    padding: 60px 40px 20px;
+    font-size: 26px;
+    color: gold;
 }
 
-h2 {
-    color: #b22222;
+.content-star {
+    padding: 30px 60px;
     text-align: center;
-    margin: 20px 0;
 }
 
-.card {
-    background: linear-gradient(135deg, #145a32, #1e8449);
-    padding: 25px;
+.content-star h2 {
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.card-star {
+    background: rgba(0,0,0,0.4);
     border-radius: 15px;
-    color: white;
-    margin: 30px 0;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.card-star ul {
+    list-style: none;
+}
+
+.card-star li {
+    margin: 10px 0;
 }
 
 .emoji-line {
-    text-align: center;
-    font-size: 30px;
+    font-size: 28px;
     margin: 20px 0;
 }
 
 .final-text {
-    text-align: center;
-    color: #b22222;
     font-size: 18px;
     font-weight: bold;
+    color: gold;
 }
 
-.footer {
-    background: #f1f1f1;
+.footer-star {
     text-align: center;
     padding: 20px;
+    font-size: 14px;
+    color: #eee;
 }
 
 /* ❄ NIEVE */
-.snow-container {
+.snow-container,
+.star-container {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 10;
 }
 
-.snowflake {
+.snowflake, .star {
     position: absolute;
-    top: -20px;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh);
-    }
-}
-
-/* ⭐ ESTRELLAS */
-.star {
-    position: absolute;
-    top: -20px;
-    color: gold;
-    animation: fallStar linear infinite;
-    text-shadow: 0 0 8px gold;
-}
-
-@keyframes fallStar {
-    to {
-        transform: translateY(110vh);
-    }
+    top: -30px;
 }
 
 /* 🎄 LUCES */
@@ -159,7 +159,7 @@ h2 {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    z-index: 10000;
+    z-index: 15;
 }
 
 .luces span {
@@ -170,12 +170,13 @@ h2 {
 }
 
 .luces span:nth-child(1) { background: red; }
-.luces span:nth-child(2) { background: yellow; animation-delay: .3s; }
-.luces span:nth-child(3) { background: green; animation-delay: .6s; }
-.luces span:nth-child(4) { background: blue; animation-delay: .9s; }
+.luces span:nth-child(2) { background: gold; }
+.luces span:nth-child(3) { background: green; }
+.luces span:nth-child(4) { background: blue; }
 
 @keyframes blink {
-    from { opacity: .3; }
+    from { opacity: 0.3; }
     to { opacity: 1; }
 }
+
 
