@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz Navidad 2025</title>
-    <link rel="stylesheet" href="Estilos.css">
+
+    <!-- FORZAR CACHÉ -->
+    <link rel="stylesheet" href="Estilos.css?v=5">
 </head>
 <body>
 
-<!-- 🎄 LUCES -->
+<!-- 🌲 FONDO DE ÁRBOLES -->
+<div class="background-trees"></div>
+
+<!-- 🎄 LUCES PARPADEANTES -->
 <div class="luces">
     <span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
 </div>
+
+<!-- 🎵 MÚSICA (se activa al primer clic) -->
+<audio id="musica" loop>
+    <source src="musica.mp3?v=1" type="audio/mpeg">
+</audio>
 
 <!-- 🎄 NAVBAR -->
 <nav class="navbar">
@@ -21,73 +31,58 @@
     </div>
     <ul class="nav-menu">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#carta">Carta</a></li>
-        <li><a href="#mensaje">Mensaje</a></li>
     </ul>
 </nav>
 
 <!-- 🎁 TARJETA -->
 <div class="container">
     <div class="header" id="inicio">
-        <h1>🎄 Feliz Navidad 🎄</h1>
-        <p>Que esta temporada esté llena de amor y alegría</p>
+        <h1><em>🎄 Feliz Navidad 🎄</em></h1>
+        <p><em>Que esta temporada esté llena de amor y esperanza</em></p>
     </div>
 
     <div class="content">
         <div class="icon-section">✨</div>
 
-        <h2 id="mensaje">Un Mensaje Especial para Ti</h2>
+        <h2>Un Mensaje para Compartir</h2>
 
         <p>
-            En esta época del año celebramos la paz, el amor y la esperanza.
-            La Navidad nos recuerda la importancia de compartir momentos con
-            quienes más queremos.
+            La Navidad es una oportunidad para hacer una pausa, agradecer lo vivido
+            y renovar nuestras fuerzas para lo que viene. Que esta época te recuerde
+            que cada esfuerzo vale la pena y que siempre hay razones para seguir
+            soñando, aprendiendo y creciendo.
         </p>
 
-        <div class="card" id="carta">
-            <h3>Mis Deseos para estas Festividades Son:</h3>
+        <div class="card">
+            <h3>Metas para estas Festividades:</h3>
             <p>
-                ✨ Que encuentres felicidad en cada detalle<br><br>
-                🎁 Que tus días estén llenos de sorpresas<br><br>
-                ⭐ Que el próximo año traiga sueños cumplidos<br><br>
-                💫 Que la salud y el amor nunca falten
+                🌟 Que el nuevo año llegue lleno de oportunidades<br><br>
+                🎄 Que nunca te falten motivos para sonreír<br><br>
+                🚀 Que cada meta que te propongas esté un paso más cerca<br><br>
+                ❤️ Que la paz y la tranquilidad acompañen tu camino
             </p>
         </div>
-
-        <p>
-            Gracias por ser parte de este año tan especial.
-            Que estas fiestas estén llenas de alegría y recuerdos inolvidables.
-        </p>
 
         <div class="emoji-line">🎅 🎁 ⭐ 🔔</div>
 
         <p class="final-text">
-            ¡Feliz Navidad y Próspero Año Nuevo!
+            <em>¡Feliz Navidad y Próspero Año Nuevo!</em>
         </p>
     </div>
 
     <div class="footer">
-        © 2025 - Con cariño en esta temporada especial 🎄<br>
         @ Jhofre Jesus Zambrano Robalino
     </div>
 </div>
 
-<!-- 🎵 MÚSICA AUTOMÁTICA -->
-<audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
+<script src="animacionnevada.js?v=5"></script>
 
 <script>
-document.addEventListener("click", () => {
-    const music = document.getElementById("bgMusic");
-    if (music.paused) {
-        music.volume = 0.5;
-        music.play();
-    }
-}, { once: true });
+    // Activar música al primer clic (obligatorio por navegador)
+    document.addEventListener("click", () => {
+        document.getElementById("musica").play();
+    }, { once: true });
 </script>
 
-<script src="animacionnevada.js"></script>
 </body>
 </html>
-
