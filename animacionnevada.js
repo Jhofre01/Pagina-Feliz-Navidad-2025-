@@ -1,10 +1,6 @@
-/* ❄️ + ⭐ ANIMACIONES NAVIDEÑAS */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ======================
-       ❄️ NIEVE
-    ====================== */
+    /* ❄ NIEVE */
     const snowSymbols = ["❄", "❅", "❆", "✻", "✼"];
     const snowCount = 80;
 
@@ -25,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         snowContainer.appendChild(snow);
     }
 
-    /* ======================
-       ⭐ ESTRELLAS
-    ====================== */
+    /* ⭐ ESTRELLAS */
     const starCount = 40;
 
     const starContainer = document.createElement("div");
@@ -46,8 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         starContainer.appendChild(star);
     }
-
 });
 
-
-
+/* 🎵 ACTIVAR MÚSICA AL CLICK */
+document.addEventListener("click", () => {
+    const audio = document.getElementById("musica");
+    if (audio && audio.paused) {
+        audio.play();
+    }
+}, { once: true });
