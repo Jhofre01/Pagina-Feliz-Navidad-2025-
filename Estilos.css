@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+}
+
+/* 🎄 NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #d4145a, #fbb03b);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.nav-title span {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    background: white;
+    color: #d4145a;
+}
+
+/* 🎁 TARJETA */
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #d4145a, #fbb03b);
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.content {
+    padding: 40px;
+}
+
+.icon-section {
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 {
+    color: #d4145a;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    margin: 30px 0;
+}
+
+.emoji-line {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.final-text {
+    text-align: center;
+    color: #d4145a;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ❄ NIEVE */
+.snow-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* 🎄 LUCES PARPADEANTES */
+.luces {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10000;
+}
+
+.luces span {
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    animation: blink 1.5s infinite alternate;
+}
+
+.luces span:nth-child(2n) { background: yellow; animation-delay: .3s; }
+.luces span:nth-child(3n) { background: green; animation-delay: .6s; }
+.luces span:nth-child(4n) { background: blue; animation-delay: .9s; }
+
+@keyframes blink {
+    from { opacity: .3; }
+    to { opacity: 1; }
+}
