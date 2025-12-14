@@ -15,7 +15,6 @@ html, body {
 body {
     font-family: 'Georgia', serif;
     min-height: 100vh;
-    position: relative;
 
     background:
         linear-gradient(rgba(0, 40, 25, 0.75), rgba(0, 40, 25, 0.75)),
@@ -29,8 +28,8 @@ body {
     background: linear-gradient(135deg, #b11226, #0f6b3f);
     padding: 25px;
     text-align: center;
-    z-index: 15;
     position: relative;
+    z-index: 15;
 }
 
 .nav-title {
@@ -42,7 +41,7 @@ body {
 /* 🎵 BOTÓN MÚSICA */
 #btnMusica {
     margin-top: 15px;
-    padding: 10px 24px;
+    padding: 10px 26px;
     border-radius: 25px;
     border: none;
     background: gold;
@@ -50,45 +49,50 @@ body {
     cursor: pointer;
 }
 
-/* ⭐ ESTRELLA */
+/* ⭐ ESTRELLA DECORATIVA */
 .container-star {
-    width: 720px;
-    margin: 100px auto;
-    padding-bottom: 60px;
-    background: linear-gradient(135deg, #8b0015, #3a0010);
+    width: 820px;
+    margin: 110px auto;
+    padding: 130px 0;
+    background: linear-gradient(135deg, #7a0012, #2b000a);
     clip-path: polygon(
         50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
+        62% 32%,
+        100% 32%,
+        70% 55%,
+        82% 100%,
+        50% 78%,
+        18% 100%,
+        30% 55%,
+        0% 32%,
+        38% 32%
     );
     position: relative;
-    z-index: 10;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.9);
     color: white;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.85);
 }
 
 /* CABECERA */
 .header-star {
     text-align: center;
-    padding: 70px 40px 20px;
-    font-size: 26px;
+    padding-bottom: 30px;
+    font-size: 28px;
     color: gold;
     text-shadow: 0 3px 6px rgba(0,0,0,0.9);
 }
 
-/* CONTENIDO INTERNO */
+/* 📜 PANEL CENTRAL */
+.content-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 25px;
+    padding: 40px 50px;
+}
+
+/* TEXTO */
 .content-star {
-    padding: 35px 60px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 20px;
 }
 
 .content-star h2 {
@@ -98,14 +102,14 @@ body {
 
 .content-star p,
 .content-star li {
-    font-size: 18px;
-    line-height: 1.7;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    font-size: 19px;
+    line-height: 1.8;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.9);
 }
 
 /* TARJETA */
 .card-star {
-    background: rgba(0,0,0,0.55);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 15px;
     padding: 20px;
     margin: 25px 0;
@@ -117,12 +121,12 @@ body {
 
 /* EXTRA */
 .emoji-line {
-    font-size: 28px;
+    font-size: 30px;
     margin: 20px 0;
 }
 
 .final-text {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: gold;
     text-shadow: 0 3px 6px rgba(0,0,0,0.9);
@@ -130,7 +134,7 @@ body {
 
 .footer-star {
     text-align: center;
-    padding: 30px;
+    padding-top: 40px;
     font-size: 14px;
     color: #eee;
 }
@@ -139,10 +143,7 @@ body {
 .snow-container,
 .star-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     pointer-events: none;
     z-index: 20;
 }
@@ -196,7 +197,4 @@ body {
     from { opacity: 0.3; }
     to { opacity: 1; }
 }
-
-
-
 
