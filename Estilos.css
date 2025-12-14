@@ -19,26 +19,27 @@ body {
     position: relative;
 }
 
-/* 🌲 ÁRBOLES */
+/* 🌲 ÁRBOLES CENTRADOS */
 .background-trees {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 260px;
-    background: url("arboles.png") repeat-x bottom;
+    height: 300px;
+    background: url("arboles.png") no-repeat center;
     background-size: contain;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
 /* 🎄 NAVBAR */
 .navbar {
     background: linear-gradient(135deg, #b11226, #0f6b3f);
-    padding: 30px;
+    padding: 25px;
     text-align: center;
-    z-index: 5;
+    z-index: 10;
     position: relative;
 }
 
@@ -48,23 +49,22 @@ body {
     font-weight: bold;
 }
 
-.nav-menu {
-    list-style: none;
+/* 🎵 BOTÓN MÚSICA */
+#btnMusica {
     margin-top: 15px;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 25px;
-    background: rgba(255,255,255,0.25);
+    padding: 8px 20px;
     border-radius: 20px;
+    border: none;
+    background: gold;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* ⭐ TARJETA ESTRELLA */
 .container-star {
-    width: 680px;
+    width: 720px;
     margin: 80px auto;
+    padding-bottom: 60px;
     background: linear-gradient(135deg, #c31432, #240b36);
     clip-path: polygon(
         50% 0%,
@@ -78,8 +78,8 @@ body {
         2% 35%,
         39% 35%
     );
-    z-index: 5;
     position: relative;
+    z-index: 10;
     color: white;
     box-shadow: 0 20px 60px rgba(0,0,0,0.7);
 }
@@ -102,8 +102,14 @@ body {
     margin-bottom: 15px;
 }
 
+.content-star p,
+.content-star li {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
 .card-star {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.55);
     border-radius: 15px;
     padding: 20px;
     margin: 25px 0;
@@ -111,10 +117,6 @@ body {
 
 .card-star ul {
     list-style: none;
-}
-
-.card-star li {
-    margin: 10px 0;
 }
 
 .emoji-line {
@@ -135,7 +137,7 @@ body {
     color: #eee;
 }
 
-/* ❄ NIEVE */
+/* ❄ NIEVE Y ⭐ ESTRELLAS */
 .snow-container,
 .star-container {
     position: fixed;
@@ -144,12 +146,30 @@ body {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 10;
+    z-index: 20;
 }
 
 .snowflake, .star {
     position: absolute;
     top: -30px;
+}
+
+/* ANIMACIONES */
+@keyframes snowFall {
+    to { transform: translateY(110vh); }
+}
+
+@keyframes starFall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}
+
+.snowflake {
+    color: white;
+    animation: snowFall linear infinite;
+}
+
+.star {
+    animation: starFall linear infinite;
 }
 
 /* 🎄 LUCES */
@@ -159,7 +179,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    z-index: 15;
+    z-index: 30;
 }
 
 .luces span {
@@ -178,5 +198,6 @@ body {
     from { opacity: 0.3; }
     to { opacity: 1; }
 }
+
 
 
