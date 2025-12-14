@@ -12,10 +12,10 @@ body {
 
 /* 🎄 NAVBAR */
 .navbar {
-    background: linear-gradient(135deg, #d4145a, #fbb03b);
+    background: linear-gradient(135deg, #0f9b0f, #f83600, #f9d423);
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .nav-title span {
@@ -29,41 +29,44 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin-top: 15px;
 }
 
 .nav-menu a {
     color: white;
     text-decoration: none;
     padding: 12px 25px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.25);
     border-radius: 25px;
     transition: 0.3s;
 }
 
 .nav-menu a:hover {
     background: white;
-    color: #d4145a;
+    color: #c31432;
 }
 
 /* 🎁 TARJETA */
 .container {
     max-width: 700px;
-    margin: 50px auto;
-    background: white;
+    margin: 60px auto;
+    background: #111;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
     overflow: hidden;
 }
 
 .header {
-    background: linear-gradient(135deg, #d4145a, #fbb03b);
+    background: linear-gradient(135deg, #ff512f, #dd2476);
     padding: 50px;
     text-align: center;
     color: white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
 }
 
 .content {
     padding: 40px;
+    color: white;
 }
 
 .icon-section {
@@ -72,7 +75,7 @@ body {
 }
 
 h2 {
-    color: #d4145a;
+    color: #ffb347;
     text-align: center;
     margin: 20px 0;
 }
@@ -81,7 +84,6 @@ h2 {
     background: linear-gradient(135deg, #667eea, #764ba2);
     padding: 25px;
     border-radius: 15px;
-    color: white;
     margin: 30px 0;
 }
 
@@ -93,13 +95,14 @@ h2 {
 
 .final-text {
     text-align: center;
-    color: #d4145a;
+    color: #ffb347;
     font-size: 18px;
     font-weight: bold;
 }
 
 .footer {
-    background: #f1f1f1;
+    background: #1c1c1c;
+    color: #aaa;
     text-align: center;
     padding: 20px;
 }
@@ -107,21 +110,26 @@ h2 {
 /* ❄ NIEVE */
 .snow-container {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 5000;
+    overflow: hidden;
 }
 
 .snowflake {
     position: absolute;
-    top: -20px;
+    top: -10vh;
     animation: fall linear infinite;
+    color: white;
+    user-select: none;
 }
 
 @keyframes fall {
     to {
-        transform: translateY(110vh);
+        transform: translateY(120vh);
     }
 }
 
@@ -138,11 +146,11 @@ h2 {
 .luces span {
     width: 12px;
     height: 12px;
-    background: red;
     border-radius: 50%;
     animation: blink 1.5s infinite alternate;
 }
 
+.luces span:nth-child(1n) { background: red; }
 .luces span:nth-child(2n) { background: yellow; animation-delay: .3s; }
 .luces span:nth-child(3n) { background: green; animation-delay: .6s; }
 .luces span:nth-child(4n) { background: blue; animation-delay: .9s; }
