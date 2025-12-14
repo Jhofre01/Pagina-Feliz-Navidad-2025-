@@ -1,163 +1,213 @@
-/* RESET */
+/* ===============================
+   RESET GENERAL
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    font-family: "Georgia", serif;
-
-    background:
-        linear-gradient(rgba(0,40,25,.75), rgba(0,40,25,.75)),
-        url("arboles.png") center/cover fixed no-repeat;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ===============================
+   FONDO GENERAL
+================================ */
+body {
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 50, 30, 0.85), rgba(0, 50, 30, 0.85)),
+        url("fondo.jpg") center / cover no-repeat fixed;
+    position: relative;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
 .navbar {
     background: linear-gradient(135deg, #b11226, #0f6b3f);
-    padding: 25px;
+    padding: 28px;
     text-align: center;
+    position: relative;
+    z-index: 20;
 }
 
 .nav-title {
-    font-size: 36px;
     color: gold;
+    font-size: 38px;
     font-weight: bold;
 }
 
-#btnMusica {
+.nav-menu {
+    list-style: none;
     margin-top: 15px;
-    padding: 10px 28px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 25px;
-    border: none;
+    font-weight: bold;
+}
+
+/* ===============================
+   BOTÓN MÚSICA
+================================ */
+.music-btn {
+    margin-top: 15px;
     background: gold;
+    color: #400;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
 }
 
-/* HERO */
-.hero {
+/* ===============================
+   TARJETA CENTRAL
+================================ */
+.container-star {
+    max-width: 600px;
+    margin: 120px auto;
+    background: rgba(0, 0, 0, 0.82);
+    padding: 40px 35px;
+    border-radius: 25px;
+    text-align: center;
     position: relative;
-    min-height: 100vh;
+    z-index: 10;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+
+.container-star::before {
+    content: "★";
+    position: absolute;
+    inset: -60px;
+    color: #7a0015;
+    font-size: 680px;
+    opacity: 0.35;
+    z-index: -1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* ⭐ ESTRELLA */
-.star-shape {
-    position: absolute;
-    width: 850px;
-    height: 850px;
-    background: linear-gradient(135deg, #7a0012, #2b000a);
-    clip-path: polygon(
-        50% 0%,
-        62% 32%,
-        100% 32%,
-        70% 55%,
-        82% 100%,
-        50% 78%,
-        18% 100%,
-        30% 55%,
-        0% 32%,
-        38% 32%
-    );
-    box-shadow: 0 40px 90px rgba(0,0,0,.9);
-    z-index: 1;
-}
-
-/* 📜 PANEL TEXTO */
-.text-panel {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    padding: 45px 50px;
-    background: rgba(0,0,0,.8);
-    border-radius: 25px;
-    text-align: center;
-    color: #fff;
-}
-
-/* TEXTO */
-.text-panel h1 {
-    color: gold;
+/* ===============================
+   TEXTO TARJETA
+================================ */
+.container-star h1 {
     font-size: 36px;
+    color: gold;
     margin-bottom: 20px;
 }
 
-.text-panel p {
-    font-size: 20px;
+.container-star p {
+    font-size: 17px;
     line-height: 1.8;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    color: #f2f2f2;
 }
 
-.intro {
-    font-size: 22px;
-}
-
-/* TARJETA */
-.card {
-    background: rgba(255,255,255,.08);
-    padding: 20px;
-    border-radius: 18px;
-    margin: 25px 0;
-}
-
-.card h2 {
+.container-star h2 {
     color: gold;
-    margin-bottom: 10px;
+    margin: 25px 0 15px;
 }
 
-.card ul {
+.container-star ul {
     list-style: none;
+    padding: 0;
 }
 
-.card li {
-    font-size: 19px;
-    margin: 8px 0;
+.container-star li {
+    margin: 12px 0;
+    font-size: 16px;
 }
 
-/* FINAL */
-.final {
-    font-size: 22px;
-    font-weight: bold;
+.final-text {
+    margin-top: 30px;
+    font-size: 20px;
     color: gold;
-    margin-top: 20px;
+    font-weight: bold;
 }
 
-footer {
-    margin-top: 25px;
-    font-size: 14px;
-    color: #ddd;
-}
-
-/* 🎄 LUCES */
-.luces {
+/* ===============================
+   NIEVE Y ESTRELLAS
+================================ */
+.snow-container,
+.star-container {
     position: fixed;
     top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    z-index: 50;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 40;
+    overflow: hidden;
 }
 
-.luces span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    animation: blink 1.5s infinite alternate;
+/* ❄ NIEVE */
+.snowflake {
+    position: absolute;
+    top: -10vh;
+    color: white;
+    animation-name: snowFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-.luces span:nth-child(1){background:red;}
-.luces span:nth-child(2){background:gold;}
-.luces span:nth-child(3){background:green;}
-.luces span:nth-child(4){background:blue;}
-
-@keyframes blink {
-    from {opacity:.3;}
-    to {opacity:1;}
+/* ⭐ ESTRELLAS */
+.star {
+    position: absolute;
+    top: -10vh;
+    animation-name: starFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
+
+/* ===============================
+   ANIMACIONES
+================================ */
+@keyframes snowFall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(120vh);
+    }
+}
+
+@keyframes starFall {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(120vh) rotate(360deg);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .container-star {
+        margin: 80px 20px;
+        padding: 30px 20px;
+    }
+
+    .container-star::before {
+        font-size: 520px;
+    }
+
+    .nav-title {
+        font-size: 28px;
+    }
+}
+
 
 
