@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ESTILOS -->
-    <link rel="stylesheet" href="Estilos.css?v=4">
+    <link rel="stylesheet" href="Estilos.css?v=5">
 </head>
 <body>
 
-<!-- 🌲 FONDO DE ÁRBOLES -->
+<!-- 🌲 FONDO DE ÁRBOLES (CENTRADO) -->
 <div class="background-trees"></div>
 
 <!-- 🎄 LUCES -->
@@ -19,17 +19,15 @@
     <span></span><span></span><span></span><span></span><span></span>
 </div>
 
-<!-- 🎵 MÚSICA (AUTOMÁTICA Y OCULTA) -->
-<audio autoplay loop hidden>
-    <source src="musica.mp3?v=2" type="audio/mpeg">
+<!-- 🎵 MÚSICA -->
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <!-- 🎄 NAVBAR -->
 <nav class="navbar">
     <div class="nav-title">🎄 Navidad 2025 🎄</div>
-    <ul class="nav-menu">
-        <li><a href="#inicio">Musica</a></li>
-    </ul>
+    <button id="btnMusica">🎵 Activar música</button>
 </nav>
 
 <!-- ⭐ TARJETA EN FORMA DE ESTRELLA -->
@@ -42,7 +40,7 @@
 
     <div class="content-star">
 
-        <h2>Un Mensaje Especial para Ti</h2>
+        <h2>Un Mensaje Especial para compartir</h2>
 
         <p>
             Que esta Navidad te regale momentos de calma, sonrisas sinceras
@@ -75,8 +73,9 @@
 </div>
 
 <!-- EFECTOS -->
-<script src="animacionnevada.js?v=4"></script>
+<script src="animacionnevada.js?v=5"></script>
 
 </body>
 </html>
+
 
