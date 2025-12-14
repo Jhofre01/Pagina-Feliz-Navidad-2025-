@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* 🎵 ACTIVAR MÚSICA AL CLICK */
+/* 🎵 ACTIVAR MÚSICA CON CLICK */
 document.addEventListener("click", () => {
     const audio = document.getElementById("musica");
     if (audio && audio.paused) {
