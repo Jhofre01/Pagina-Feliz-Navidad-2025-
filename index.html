@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Navidad </title>
+    <title>Feliz Navidad 2025</title>
     <link rel="stylesheet" href="Estilos.css">
 </head>
 <body>
 
-<!-- 🎄 LUCES PARPADEANTES -->
+<!-- 🎄 LUCES -->
 <div class="luces">
     <span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
 </div>
-
-<!-- 🎵 MÚSICA NAVIDEÑA -->
-<audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-</audio>
 
 <!-- 🎄 NAVBAR -->
 <nav class="navbar">
@@ -35,8 +29,8 @@
 <!-- 🎁 TARJETA -->
 <div class="container">
     <div class="header" id="inicio">
-        <h1><em>🎄 Feliz Navidad 🎄</em></h1>
-        <p><em>Que esta temporada esté llena de amor y alegría</em></p>
+        <h1>🎄 Feliz Navidad 🎄</h1>
+        <p>Que esta temporada esté llena de amor y alegría</p>
     </div>
 
     <div class="content">
@@ -49,8 +43,6 @@
             La Navidad nos recuerda la importancia de compartir momentos con
             quienes más queremos.
         </p>
-
-        <hr class="divider">
 
         <div class="card" id="carta">
             <h3>Mis Deseos para estas Festividades Son:</h3>
@@ -70,7 +62,7 @@
         <div class="emoji-line">🎅 🎁 ⭐ 🔔</div>
 
         <p class="final-text">
-            <em>¡Feliz Navidad y Próspero Año Nuevo!</em>
+            ¡Feliz Navidad y Próspero Año Nuevo!
         </p>
     </div>
 
@@ -80,10 +72,22 @@
     </div>
 </div>
 
-<audio controls loop>
+<!-- 🎵 MÚSICA AUTOMÁTICA -->
+<audio id="bgMusic" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+document.addEventListener("click", () => {
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+        music.volume = 0.5;
+        music.play();
+    }
+}, { once: true });
+</script>
 
 <script src="animacionnevada.js"></script>
 </body>
 </html>
+
